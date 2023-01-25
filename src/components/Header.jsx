@@ -46,10 +46,14 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16">
+    <header className="fixed z-50 w-screen bg-primary p-3 px-4 md:p-6 md:px-16">
       {/* desktop & tablet */}
       <div className="hidden md:flex justify-between w-full h-full">
-        <Link to={"/"} className="flex items-center gap-2">
+        <Link
+          to={"/"}
+          className="flex items-center gap-2"
+          onClick={() => setIsMenu(false)}
+        >
           <img className="w-[32px] object-cover" src={Logo} alt="logo" />
           <p className="text-headingColor text-xl font-bold">MegaFood</p>
         </Link>
@@ -61,16 +65,28 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8 "
           >
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li
+              className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+              onClick={() => setIsMenu(false)}
+            >
               Home
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li
+              className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+              onClick={() => setIsMenu(false)}
+            >
               Menu
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li
+              className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+              onClick={() => setIsMenu(false)}
+            >
               About Us
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li
+              className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
+              onClick={() => setIsMenu(false)}
+            >
               Service
             </li>
           </motion.ul>
@@ -98,7 +114,7 @@ const Header = () => {
                 className="w-40 bg-gray-50 shadow-xl flex flex-col rounded-lg absolute top-12 right-0"
               >
                 {user && user.email === "francisnwachukwu100@gmail.com" && (
-                  <Link to="/createItem">
+                  <Link to="/createItem" onClick={() => setIsMenu(false)}>
                     <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
                       New Item
                       <MdAdd />
