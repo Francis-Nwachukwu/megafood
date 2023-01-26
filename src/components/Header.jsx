@@ -31,7 +31,7 @@ const Header = () => {
       });
       localStorage.setItem("user", JSON.stringify(providerData[0]));
     } else {
-      setIsMenu((prevState) => !prevState);
+      setIsMenu(!isMenu);
     }
   };
 
@@ -122,7 +122,10 @@ const Header = () => {
                   </Link>
                 )}
 
-                <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-red-500 text-base">
+                <p
+                  onClick={logout}
+                  className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-red-500 text-base"
+                >
                   Logout
                   <MdLogout />
                 </p>
